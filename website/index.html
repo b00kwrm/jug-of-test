@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script id="results-template" type="text/x-handlebars-template">
+    <table summary="Jug of Punch Search Results">
+  <caption>Jug of Punch Search Results</caption>
+    <thead>
+      <tr>
+	<th>Brand Name</th>
+	<th>Store</th>
+	<th>Store Street Address</th>
+	<th>Store City</th>
+	<th>Store Zip Code</th>
+	<th>Store Phone Number</th>
+      </tr>
+      <thead>
+	<tbody>
+      {{#each .}}
+      <tr>
+	<td>{{brand_name}}</td>
+	<td>{{store_name}}</td>
+	<td>{{address}}</td>
+	<td>{{city}}</td>
+	<td>{{zip}}</td>
+	<td>{{phone}}</td>
+	</tr>
+      {{/each}}
+      </tbody>
+    </table>
+    </script>
+
+    <form action="example/submit.html">
+	Value: <input type="text" name="foo" list="json-datalist" placeholder="Beam">
+	<datalist id="json-datalist"></datalist>
+      <button type="search">Search</button>
+      </form>
+
+    
+    <div id="results"></div>
+
+
+   <script src="js/get-geo.js"></script>
+   <script src="js/handlebars-v4.0.5.js"></script>
+   <script src="js/load-data-list.js"></script>
+   
+  </body>
+</html>
