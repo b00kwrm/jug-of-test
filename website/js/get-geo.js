@@ -22,7 +22,7 @@ function success(position) {
 	// Create query string
         queryString = '?q=' + urlEncodedData + '&lat=' + urlEncodedLat + '&lon=' + urlEncodedLon; 
     
-        var searchUrl = 'http://192.168.1.118:8000/geoFilter' + queryString;
+        var searchUrl = 'http://api.jugofpunch.com:8000/geoFilter' + queryString;
 
       // We define what will happen if the data are successfully sent
       XHR.addEventListener("load", function(event) {

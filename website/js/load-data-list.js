@@ -35,5 +35,5 @@ request.onreadystatechange = function(response) {
 input.placeholder = "Loading options...";
 
 // Set up and make the request.
-request.open('GET', 'http://192.168.1.118:8000/brandsComplete', true);
+request.open('GET', 'http://api.jugofpunch.com:8000/brandsComplete', true);
 request.send();
