@@ -1,0 +1,37 @@
+# These environmental variables must be set in CircleCI UI
+#
+# DOCKER_EMAIL	login info for docker hub
+# DOCKER_USER
+# DOCKER_PASS
+# DOCKER_REPO
+
+dependencies:
+  override:
+    - docker info
+    - curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    - sudo chmod +x /usr/local/bin/docker-compose
+    - docker-compose --version
+    - sudo chmod +x /usr/local/bin/docker-compose
+    - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
+    - cp geckodriver-v0.11.1-linux64.tar.gz /home/ubuntu/virtualenvs/venv-3.5.2/bin
+    - cd /home/ubuntu/virtualenvs/venv-3.5.2/bin && tar xzf geckodriver-v0.11.1-linux64.tar.gz
+    - export PATH=$PATH:/home/ubuntu/hello-devops
+    - echo $PATH
+
+machine:
+  python:
+    version: 3.5.2
+  services:
+    - docker
+
+test:
+  override:
+    - docker-compose up
+    - python functional_tests.py
+
+deployment:
+  hub:
+    branch: master
+    commands:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push b00kwrm/hello
