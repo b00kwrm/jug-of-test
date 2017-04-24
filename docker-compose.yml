@@ -2,13 +2,13 @@
 version: '2'
 services:
   elasticsearch:
-    image: b00kwrm/jug-of-test-es
+    build: ./elasticsearch
     ports:
       - "8080:8080"
     volumes:
      - esdatanew:/usr/share/elasticsearch/data
   api:
-    image: b00kwrm/jug-of-test-api
+    build: ./api
     ports:
       - "8000:8000"
     depends_on:
@@ -16,7 +16,7 @@ services:
     links:
      - elasticsearch
   web:
-    image: b00kwrm/jug-of-test-website
+    build: ./website
     ports:
       - "80:80"
     depends_on:
