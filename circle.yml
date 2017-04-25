@@ -27,7 +27,7 @@ machine:
 test:
   override:
     - docker-compose up
-    - python functional_tests.py
+    - python tests/functional_tests.py
 
 deployment:
   hub:
