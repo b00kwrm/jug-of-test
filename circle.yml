@@ -34,4 +34,6 @@ deployment:
     branch: master
     commands:
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - docker push b00kwrm/hello
+    - docker push b00kwrm/jug-of-test-website
+    - docker push b00kwrm/jug-of-test-api
+    - docker push b00kwrm/jug-of-test-es
