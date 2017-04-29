@@ -1,29 +1,29 @@
 # Docker compose file to bring up jug of punch
 version: '2'
 services:
-  elasticsearch:
-    build: ./elasticsearch
-    ports:
-      - "8080:8080"
-    volumes:
-     - esdatanew:/usr/share/elasticsearch/data
+#  elasticsearch:
+#    build: ./elasticsearch
+#    ports:
+#      - "8080:8080"
+#    volumes:
+#     - esdatanew:/usr/share/elasticsearch/data
   api:
     build: ./api
     ports:
       - "8000:8000"
-    depends_on:
-      - elasticsearch
-    links:
-     - elasticsearch
+#    depends_on:
+#      - elasticsearch
+#    links:
+#     - elasticsearch
   web:
     build: ./website
     ports:
       - "80:80"
     depends_on:
       - api
-      - elasticsearch
+#      - elasticsearch
     links:
      - api
-volumes:
-  esdatanew:
-    driver: local
+#volumes:
+#  esdatanew:
+#    driver: local
