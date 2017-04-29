@@ -3,6 +3,8 @@ dist: trusty
 
 install:
 # Install docker according to official docker docs.
+ - pwd
+ 
  - ls
  
  - sudo apt-get update
