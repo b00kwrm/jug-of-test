@@ -31,7 +31,7 @@ install:
     
  - cd /usr/local/bin && sudo tar xzf geckodriver-v0.11.1-linux64.tar.gz
  
- - pip install selenium
+ - pip3 install selenium
     
  - echo $PATH
 
