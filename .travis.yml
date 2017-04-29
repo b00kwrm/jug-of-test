@@ -35,7 +35,7 @@ install:
 
 before_script:
   - sudo sysctl -w vm.max_map_count=262144
-  - cd ~/jug-of-test
+  - cd /home/travis/build/b00kwrm/jug-of-test
   - docker-compose up
 
 script:
