@@ -25,7 +25,7 @@ install:
  
  - sudo cp geckodriver-v0.11.1-linux64.tar.gz /usr/local/bin
     
- - cd /usr/local/bin && tar xzf geckodriver-v0.11.1-linux64.tar.gz
+ - cd /usr/local/bin && sudo tar xzf geckodriver-v0.11.1-linux64.tar.gz
     
  - echo $PATH
 
