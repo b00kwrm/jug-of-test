@@ -3,7 +3,8 @@ dist: trusty
 
 install:
 # Install docker according to official docker docs.
-- ls -alh
+ - ls
+ 
  - sudo apt-get update
 
  - sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
