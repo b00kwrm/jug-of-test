@@ -41,7 +41,7 @@ before_script:
   - docker-compose up -d
 
 script:
- - python tests/functional_tests.py
+ - python3 tests/functional_tests.py
 
 after_script:
  - docker-compose down
