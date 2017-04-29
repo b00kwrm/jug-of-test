@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 
 addons:
-  firefox: "latest"
+  firefox: "45.0"
 
 install:
 # Install docker according to official docker docs.
