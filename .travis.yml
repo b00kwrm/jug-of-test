@@ -1,6 +1,9 @@
 sudo: required
 dist: trusty
 
+addons:
+  firefox: "latest-nightly"
+
 install:
 # Install docker according to official docker docs.
  - pwd
