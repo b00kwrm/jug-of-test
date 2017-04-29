@@ -11,7 +11,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_can_get_jug_of_test(self):
-        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost')
 
         self.assertIn('Jug of Test', self.browser.title)
 
