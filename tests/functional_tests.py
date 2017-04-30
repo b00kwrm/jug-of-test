@@ -13,7 +13,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_get_jug_of_test(self):
         self.browser.get('http://localhost')
 
-        self.assertIn('Jug of Test', self.browser.title)
+        self.assertIn('Jug of Punch', self.browser.title)
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
