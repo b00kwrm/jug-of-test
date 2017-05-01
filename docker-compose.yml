@@ -1,22 +1,22 @@
 # Docker compose file to bring up jug of punch
 version: '2'
 services:
-#  elasticsearch:
-#    build: ./elasticsearch
-#    image: b00kwrm/jug-of-test-es
-#    ports:
-#      - "8080:8080"
-#    volumes:
-#     - esdatanew:/usr/share/elasticsearch/data
+  elasticsearch:
+    build: ./elasticsearch
+    image: b00kwrm/jug-of-test-es
+    ports:
+      - "8080:8080"
+    volumes:
+     - esdatanew:/usr/share/elasticsearch/data
   api:
     build: ./api
     image: b00kwrm/jug-of-test-api
     ports:
       - "8000:8000"
-#    depends_on:
-#      - elasticsearch
-#    links:
-#     - elasticsearch
+    depends_on:
+      - elasticsearch
+    links:
+     - elasticsearch
   web:
     build: ./website
     image: b00kwrm/jug-of-test-website
@@ -27,6 +27,6 @@ services:
 #      - elasticsearch
     links:
      - api
-#volumes:
-#  esdatanew:
-#    driver: local
+volumes:
+  esdatanew:
+    driver: local
