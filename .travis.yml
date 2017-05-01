@@ -50,7 +50,7 @@ script:
 
 after_script:
  - docker-compose down
- - docker login -u $DOCKER_USERNAME -p DOCKER_PASSWORD
+ - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
  - docker push b00kwrm/jug-of-test-website
  - docker push b00kwrm/jug-of-test-api
 
