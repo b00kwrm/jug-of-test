@@ -37,6 +37,9 @@ install:
  - pip3 install selenium
     
  - echo $PATH
+ 
+ - docker pull owasp/zap2docker-weekly
+ 
 
 before_script:
   - export DISPLAY=:99.0
@@ -47,6 +50,7 @@ before_script:
 
 script:
  - python3 tests/functional_tests.py
+ - docker run -t owasp/zap2docker-weekly zap-baseline.py -t http://localhost/
 
 after_script:
  - docker-compose down
